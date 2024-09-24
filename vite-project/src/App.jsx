@@ -3,7 +3,7 @@ import ContactForm from './ContactForm/ContactForm'
 import SearchBox from './SearchBox/SearchBox'
 import ContactList from './ContactList/ContactList'
 import initialContacts from './date.json'
-import Contact from './Contact/Contact'
+
 
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
       <ContactForm onAdd={ addContact} />
       <SearchBox value={filter} onFilter={ setFilter} />
       <ContactList contacts={ visibleContacts} onDelete={deleteContact} /> 
-      <Contact/>
+      
     </div>
   );
 }
