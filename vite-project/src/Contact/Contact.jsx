@@ -1,3 +1,5 @@
+import { ButtonContact, Container, List, ListItem } from "./Contact.styled";
+import { HiUser, HiPhone } from "react-icons/hi";
 export default function Contact({ data, onDelete }) {
 
     if (!data) {
@@ -6,10 +8,20 @@ export default function Contact({ data, onDelete }) {
   
     const { id, name, number } = data;
     return (
-        <div>
-            <p>{name }</p>
-            <p>{ number}</p>
-            <button type="submit" onClick={() => onDelete(id)}>Delete</button>
-        </div>
+      <Container>
+        <List>
+          <ListItem>
+            <HiUser />
+            {name}
+          </ListItem>
+          <ListItem>
+            <HiPhone />
+            {number}
+          </ListItem>
+          <ButtonContact type="submit" onClick={() => onDelete(id)}>
+            Delete
+          </ButtonContact>
+        </List>
+      </Container>
     );
 }
